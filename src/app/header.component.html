@@ -1,0 +1,27 @@
+<div class="header">
+<div style="text-align:left">
+    <h1>
+        {{headerTitle}}
+    </h1>  
+</div>
+
+<nav class="navbar navbar-inverse">  
+    <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" [routerLink]="['home']">Welcome</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a [routerLink]="['home']" routerLinkActive="active">Home</a></li>
+        <li><a [routerLink]="['createStudent']" routerLinkActive="active">Create Student</a></li>
+        <li><a [routerLink]="['updateStudent']" routerLinkActive="active">Update Student</a></li>
+        <li><a [routerLink]="['deleteStudent']" routerLinkActive="active">Delete Student</a></li>
+        <li><a [routerLink]="['displayStudent']" routerLinkActive="active">Display Student</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+    </div>
+</nav>
+<div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <form [formGroup]="deleteStudentForm">
+      <div class="row">
+        <div class="col-xs-8">
+          <h2>Student Deletion Form</h2>
+        </div>
+        <div class="row text-center">
+          <div class="col-xs-4">
+            <button class="btn btn-default" (click)="deleteStudent(deleteStudentForm)" [disabled]="!deleteStudentForm.valid">Delete</button>                        
+            <button class="btn btn-default" (click)="cancelStudent()">Cancel</button>
+          </div>
+        </div>
+      </div>
+      <p>Fill the below input field and click on <b>Delete</b> button to delete student details, click on <b>Cancel</b> to discard the student deletion.</p>      
+      <div class="row">
+        <div class="col-xs-4 form-group">
+          <label for="studentID">Enter Student ID Number:</label>
+          <input type="text" id="studentID" class="form-control" placeholder="Enter Student ID Number" formControlName="idNumber" required>
+        </div>
+      </div>        
+  </form>  
+</div>

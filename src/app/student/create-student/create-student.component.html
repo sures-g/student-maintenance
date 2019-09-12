@@ -1,0 +1,64 @@
+<div class="container">
+<form [formGroup]="studentForm">
+    <div class="row">
+      <div class="col-xs-8">
+        <h2>Student Creation Form</h2>
+      </div>
+      <div class="row text-center">
+        <div class="col-xs-4">
+          <button class="btn btn-default" (click)="createStudent(studentForm)" [disabled]="!studentForm.valid">Create</button>
+          <button class="btn btn-default" (click)="cancelStudent()">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <p>Fill the below input field and click on <b>Create</b> button to save student details, click on <b>Cancel</b> to discard the student creation.</p>
+    <h4>Personal Information</h4>
+    <div class="row">
+      <div class="col-xs-4 form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" [(ngModel)]="firstName" class="form-control" placeholder="Enter First Name" formControlName="firstName" required>
+      </div>
+      <div class="col-xs-4 form-group">
+        <label for="middleName">Middle Name:</label>
+        <input type="text" id="middleName" [(ngModel)]="middleName" class="form-control" placeholder="Enter Middle Name" formControlName="middleName">
+      </div>
+      <div class="col-xs-4 form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" [(ngModel)]="lastName" class="form-control" placeholder="Enter Last Name" formControlName="lastName" required>
+      </div>
+      <div class="col-xs-4 form-group">
+        <label for="studied">Class/Grade:</label>
+        <input type="text" id="studied" [(ngModel)]="studied" class="form-control" placeholder="Enter Class/Grade" formControlName="studentClass" required>
+      </div>
+      <div class="col-xs-4 form-group">
+        <label for="institute">School/Institute:</label>
+        <input type="text" id="institute" [(ngModel)]="institute" class="form-control" placeholder="Enter School/Institute" formControlName="institute" required>
+      </div>
+    </div>
+    <h4>Address Information</h4>
+    <div class="row">
+      <div formGroupName="address">
+        <div class="col-xs-4 form-group">
+          <label for="doorNumber">Door Number:</label>
+          <input type="text" id="doorNumber" [(ngModel)]="doorNumber" class="form-control" placeholder="Enter Door Number" formControlName="doorNumber" required>
+        </div>
+        <div class="col-xs-4 form-group">
+          <label for="street">Street/Lane:</label>
+          <input type="text" id="street" [(ngModel)]="street" class="form-control" placeholder="Enter Street/Lane" formControlName="street" required>
+        </div>
+        <div class="col-xs-4 form-group">
+          <label for="city">City:</label>
+          <input type="text" id="city" [(ngModel)]="city" class="form-control" placeholder="Enter City" formControlName="city" required>
+        </div>
+        <div class="col-xs-4 form-group">
+          <label for="state">State:</label>
+          <input type="text" id="state" [(ngModel)]="state" class="form-control" placeholder="Enter State" formControlName="state" required>
+        </div>
+        <div class="col-xs-4 form-group">
+          <label for="pin">Pin:</label>
+          <input type="text" id="pin" [(ngModel)]="pin" class="form-control" placeholder="Enter Pin" formControlName="pin" required>
+        </div>
+    </div>    
+  </div>
+</form>
+</div>

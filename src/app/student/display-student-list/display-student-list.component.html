@@ -1,0 +1,38 @@
+<div id="pagination">
+
+</div>
+<div class="container">
+  <h3>List of Student Details:</h3>
+  <div class="table-responsive">    
+  <table class="table">
+      <thead>
+        <tr>
+            <td>Student Number</td>        
+            <td>Student Name</td>
+            <td>Student Class</td>
+            <td>Created Time</td>
+            <td>Updated Time</td>
+            <td>Options</td>
+        </tr>
+      </thead>
+      <tr *ngFor = "let std of listOfStudents">
+        <td>{{std.idNumber}}</td>        
+        <td>{{std.firstName +", " + std.lastName}}</td>
+        <td>{{std.studentClass}}</td>      
+        <td>{{std.creationDate}}</td>        
+        <td>{{std.lastUpdatedDate}}</td>
+        <td>
+            <a [routerLink]="['../displayStudent', std.idNumber]" title="View">
+                <span class="glyphicon glyphicon-eye-open"></span>
+            </a> &nbsp;&nbsp;
+            <a [routerLink]="['../updateStudent', std.idNumber]" title="Update">
+                <span class="glyphicon glyphicon-edit"></span>
+            </a>&nbsp;&nbsp;
+            <a [routerLink]="['../deleteStudent', std.idNumber]" title="Delete">
+                <span class="glyphicon glyphicon-trash"></span>
+            </a>
+        </td>
+      </tr>  
+  </table>
+</div>
+</div>

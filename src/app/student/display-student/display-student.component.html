@@ -1,0 +1,88 @@
+<div class="container">
+    <form [formGroup]="displayStudentForm">
+        <div class="row">
+          <div class="col-xs-8">
+            <h2>Student Details Form</h2>
+          </div>
+          <div class="row text-center">
+            <div class="col-xs-4">
+              <button class="btn btn-default" (click)="displayStudent(displayStudentForm)" [disabled]="!displayStudentForm.valid">Display</button>
+              <button class="btn btn-default" (click)="cancelStudent()">Cancel</button>
+            </div>
+          </div>
+        </div>
+        <p>Fill the below input field and click on <b>Display</b> button to display student details, click on <b>Cancel</b> to discard the student details.</p>      
+        <div class="row">
+          <div class="col-xs-4 form-group">
+            <label for="studentID">Enter Student ID Number:</label>
+            <input type="text" id="studentID" class="form-control" placeholder="Enter Student ID Number" formControlName="idNumber" required>
+          </div>
+        </div>        
+    </form>  
+</div>
+
+<div class="container" *ngIf="studentDetails?.idNumber">
+  <h3>Student Details:</h3>
+  <div class="row">
+      <div class="col-xs-6">
+        <label>Personal Information:</label>
+      </div>
+      <div class="col-xs-6">          
+      </div>
+      <div class="col-xs-6">
+        <label>ID Number :</label>
+        <span>{{studentDetails.idNumber}}</span>
+      </div>
+      <div class="col-xs-6">
+        <label>Name :</label>
+        <span>{{studentDetails.firstName +', '+ 
+          studentDetails.middleName +' '+
+          studentDetails.lastName}}</span>
+      </div>
+      <div class="col-xs-6">
+        <label>Grade :</label>
+        <span>{{studentDetails.studentClass}}</span>
+      </div>
+      <div class="col-xs-6">
+        <label>Institute :</label>
+        <span>{{studentDetails.institute}}</span>
+      </div>
+      <div class="col-xs-6">
+        <label>Last Update Date :</label>
+        <span>{{studentDetails.lastUpdatedDate}}</span>
+      </div>
+      <div class="col-xs-6">
+        <label>Creation Date :</label>
+        <span>{{studentDetails.creationDate}}</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6">
+        <label>Address Information:</label>
+      </div>
+      <div class="col-xs-6">
+        <label></label>
+      </div>
+      <div class="col-xs-6">
+        <label>Door Number :</label>
+        <span>{{studentDetails.address.doorNumber}}</span>
+      </div>
+      <div class="col-xs-6">
+        <label>Street :</label>
+        <span>{{studentDetails.address.street}}</span>
+      </div>
+      <div class="col-xs-6">
+        <label>City :</label>
+        <span>{{studentDetails.address.city}}</span>
+      </div>           
+      <div class="col-xs-6">
+        <label>State :</label>
+        <span>{{studentDetails.address.state}}</span>
+      </div>
+      <div class="col-xs-6">
+        <label>Pin :</label>
+        <span>{{studentDetails.address.pin}}</span>
+      </div>
+    </div>
+</div>
